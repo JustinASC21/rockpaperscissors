@@ -16,7 +16,8 @@ $(".play").click(function() {
     $(".computerChoice").text("scissors");
   }
   
-  if (input == "rock" && randomNumber > 0.6667) {
+  if (input != "") {
+    if (input == "rock" && randomNumber > 0.6667) {
     $(".result").text("User wins!");
   }
   else if (input == "paper" && randomNumber > 0.333 && randomNumber < 0.66667) {
@@ -31,4 +32,13 @@ $(".play").click(function() {
   else {
     $(".result").text("Draw!");
   }
-})
+  
+  //clear input
+  
+  
+  $(".input").val = "";
+} else {
+  $(".result").text("Computer wins by default!");               
+}
+})    
+
