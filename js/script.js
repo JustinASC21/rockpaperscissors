@@ -4,12 +4,12 @@ $(".play").click(function() {
   let input = $(".input").val();
   $(".userChoice").text(input);
   
-  randomNumber = Math.random();
+  randomNumber = Math.ceil(Math.random() * 4);
   
-  if (randomNumber < 0.333) {
+  if (randomNumber == 1) {
     $(".computerChoice").text("paper");
   }
-  else if (randomNumber > 0.333 && randomNumber < 0.6667) {
+  else if (randomNumber == 2) {
     $(".computerChoice").text("rock");
   }
   else {
@@ -17,16 +17,16 @@ $(".play").click(function() {
   }
   
   if (input != "") {
-    if (input == "rock" && randomNumber > 0.6667) {
+    if (input == "rock" && randomNumber == 3) {
     $(".result").text("User wins!");
   }
-  else if (input == "paper" && randomNumber > 0.333 && randomNumber < 0.66667) {
+  else if (input == "paper" && randomNumber == 2) {
     $(".result").text("User wins!");
   }
-  else if (input == "scissors" && randomNumber < 0.3333) {
+  else if (input == "scissors" && randomNumber == 1) {
     $(".result").text("User wins!");
   }
-  else if ((randomNumber < 0.3333 && input == "rock") || (randomNumber > 0.333 && randomNumber < 0.666667 && input == "scissors") || (randomNumber > 0.666667 && input == "paper")) {
+  else if ((randomNumber == 1 && input == "rock") || (randomNumber == 2 && input == "scissors") || (randomNumber == 3 && input == "paper")) {
     $(".result").text("Computer wins!");
   }
   else {
