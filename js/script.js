@@ -18,7 +18,14 @@ $(".play").click(function() {
   }
   
  if (input != "") {
-    if (input == "rock" && randomNumber == 3) {
+   if ((randomNumber == 1 && input == "paper") || (randomNumber == 2 && input == "rock") || (randomNumber == 3 && input == "scissors")) {
+    $(".result").text("Draw!");
+    $(".resultImg").attr("src","https://cdn.glitch.me/02c15105-1a40-4af0-bdf0-5afa9920acbc%2Feca1073c-0d69-4695-a87e-667508a38a54.image.png?v=1638918770764");
+   }
+   else {
+     // 1 - paper 2 - rock 3 - scissors
+     // not a draw
+     if (input == "rock" && randomNumber == 3) {
     $(".result").text("User wins!");
     $(".resultImg").attr("src","https://cdn.glitch.me/02c15105-1a40-4af0-bdf0-5afa9920acbc%2F1105ef55-dbb7-4163-82fe-15e1b6b7ab77.image.png?v=1638918357034");
   }
@@ -30,23 +37,18 @@ $(".play").click(function() {
     $(".result").text("User wins!");
     $(".resultImg").attr("src","https://cdn.glitch.me/02c15105-1a40-4af0-bdf0-5afa9920acbc%2F1105ef55-dbb7-4163-82fe-15e1b6b7ab77.image.png?v=1638918357034");
   }
-  else if ((randomNumber == 1 && input == "rock") || (randomNumber == 2 && input == "scissors") || (randomNumber == 3 && input == "paper")) {
-    $(".result").text("Computer wins!");
+  
+  else {
+    $(".result").text("Computer Wins!");
     $(".resultImg").attr("src","https://cdn.glitch.me/02c15105-1a40-4af0-bdf0-5afa9920acbc%2Ffeb5e17b-8d9a-42dd-ac27-dba177b9d35f.image.png?v=1638918535402");
   }
-  else {
-    $(".result").text("Draw!");
-    $(".resultImg").attr("src","https://cdn.glitch.me/02c15105-1a40-4af0-bdf0-5afa9920acbc%2Feca1073c-0d69-4695-a87e-667508a38a54.image.png?v=1638918770764");
-  }
+   
+    
   
   
   //clear input
-  
-  
-  $(".input").val = "";
-} else {
-  $(".result").text("Computer wins by default!");               
-}
+   }
+  }
   }
   else {
     $(".resultImg").attr("src","https://cdn.glitch.me/02c15105-1a40-4af0-bdf0-5afa9920acbc%2FBsodwindows10.png?v=1638917621780");

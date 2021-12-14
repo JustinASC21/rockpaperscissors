@@ -9,3 +9,13 @@ img {
   width: 200px;
   height: 200px;
 }
+body {
+  background-color: lightgreen;
+}
+.input {
+  border: blue solid 2px;
+  border-radius: 25%;
+}
+button {
+  border-radius: 25%;
+}
