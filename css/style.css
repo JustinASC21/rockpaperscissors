@@ -19,3 +19,7 @@ body {
 button {
   border-radius: 25%;
 }
+.play {
+  background-color: orange;
+  color: white;
+}
